@@ -1,0 +1,74 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <!--django command for title-->
+  <title>
+      User Registration
+  </title>
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome -->
+	<link href="/assets/css/font-awesome.css" rel="stylesheet">
+	<!-- fonts -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	    rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+    <div class="row">
+    <div class="text-center">
+        <h1>User Registration Form</h1>
+    </div>
+        <div class="col-sm-offset-3 col-sm-6">
+        <div class="login-form">
+        <form method="post">
+            {% csrf_token %}
+            {% if success %}
+                <script>alert('success')</script>
+            {% endif %}
+            {% if fail %}
+                <script>alert('failed')</script>
+            {% endif %}
+
+            <div class="row"></div>
+
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password"  class="form-control" name="password" id="password" placeholder="Password">
+            </div>
+            <input type="submit">
+
+        </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
+<script src="/assets/js/jquery-2.1.4.min.js"></script>
+	<!-- bootstrap -->
+	<script src="/assets/js/bootstrap.js"></script>
+	<!-- smooth scrolling -->
+	<script src="/assets/js/SmoothScroll.min.js"></script>
+	<script src="/assets/js/move-top.js"></script>
+	<script src="/assets/js/easing.js"></script>
+</body>
